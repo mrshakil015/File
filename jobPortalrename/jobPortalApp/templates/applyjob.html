@@ -1,0 +1,18 @@
+{% extends 'master/master.html' %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-3">
+        <h3 class="mb-4">Application for the position of <strong>{{jobdata.job_title}}</strong></h3>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Skills Field -->
+            {{applyform}}
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

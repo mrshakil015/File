@@ -1,0 +1,80 @@
+{% extends 'master/master.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: rgb(3, 66, 71);
+            color: #ffffff;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .btn-primary {
+            background-color: rgb(3, 66, 71);
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #666;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        input,select,textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            
+            width: 100%;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-lg-5 mt-3 mb-3">
+        <div class="card">
+            <div class="card-header">
+                <h4>Add Job</h4>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{jobform}}
+                    <button type="submit" class="btn btn-primary btn-block">Add Job</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+    
+{% endblock content %}
+    

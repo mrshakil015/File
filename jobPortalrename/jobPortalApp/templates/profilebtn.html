@@ -1,0 +1,18 @@
+<div class="profile_btn text-center">
+    <a href="{% url 'editprofile' %}" class="button">Edit Profile</a>
+    <a href="" class="button button2">Basic Info</a>
+    <a href="" class="button button">Contact Info</a>
+    <a href="{% url 'changepassword' %}" class="button button3">Change Password</a>
+
+    
+    {% if user.UserType == "Recruiter" %}
+    <a href="{% url 'postedjob' %}" class="button button1">Posted Job</a>
+    {% else %}
+        
+    <a href="" class="button button4">Education Info</a>
+    <a href="" class="button button5">Work Info</a>
+    <a href="" class="button button2">Applied Job</a>
+    {% endif %}
+        
+
+</div>
