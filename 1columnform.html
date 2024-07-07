@@ -1,0 +1,48 @@
+<style>
+    label {
+        margin-bottom: 5px;
+        color: #666;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    input,select,textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        
+        width: 100%;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="form-title"><span><strong>Teacher Personal Information</strong></span></h5>
+                            {% include 'common/messages.html' %}
+                            <hr>
+                        </div>
+                        {{teacherform}}
+                        {{personalform}}
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Add Teacher</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
